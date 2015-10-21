@@ -39,10 +39,11 @@ public class GildedRoseTest {
     @Test
     public void
     the_quality_of_an_item_is_never_negative () {
-    	Item[] items = new Item[] {new Item("fixme", 1, 0) };
+    	Item[] items = new Item[] {new Item("fixme", 1, 0), new Item("Conjured", 1, 0)};
     	GildedRose app = new GildedRose(items);
         app.updateQuality();
         assertEquals(0, app.items[0].quality);
+        assertEquals(0, app.items[1].quality);
     }
     
     @Test
