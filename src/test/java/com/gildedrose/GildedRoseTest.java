@@ -19,10 +19,11 @@ public class GildedRoseTest {
     @Test
     public void 
     sell_in_decrease_by_one_every_day() {
-    	Item[] items = new Item[] {new Item("fixme", 2, 10) };
+    	Item[] items = new Item[] {new Item("fixme", 2, 10), new Item("Conjured", 2, 10) };
     	GildedRose app = new GildedRose(items);
         app.updateQuality();
         assertEquals(1, app.items[0].sellIn);
+        assertEquals(1, app.items[1].sellIn);
     }
     
     @Test
@@ -118,14 +119,5 @@ public class GildedRoseTest {
         assertEquals(8, app.items[1].quality);
     }
     
-    @Test
-    public void 
-    conjured_sell_in_decrease_by_one_every_day() {
-    	Item[] items = new Item[] {new Item("Conjured", 2, 10) };
-    	GildedRose app = new GildedRose(items);
-        app.updateQuality();
-        assertEquals(1, app.items[0].sellIn);
-    }
- 
 }
 
