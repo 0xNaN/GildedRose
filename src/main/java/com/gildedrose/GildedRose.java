@@ -8,8 +8,11 @@ class GildedRose {
     }
 
     public void updateQuality() {
-    	if(items[0].name.equals("Conjured"))
-    		items[0].quality -= 1;
+    	
+    	for(int i = 0; i < items.length; i++) {
+    		if(items[i].name.equals("Conjured"))
+    			items[i].quality -= 1;
+    	}
     	
         for (int i = 0; i < items.length; i++) {
             if (!items[i].name.equals("Aged Brie")
