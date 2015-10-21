@@ -87,11 +87,16 @@ public class GildedRoseTest {
         app.updateQuality();
         assertEquals(4, app.items[0].quality);
     }
-//    "Backstage passes", like aged brie, increases in Quality as it's SellIn value approaches;
-//   	Quality increases by 2 when there are 10 days or less and by 3 when there are 5 days or less but
-//   	Quality drops to 0 after the concert
-//    
-//    
+    
+    @Test
+    public void
+    backstage_passes_quality_drops_to_0_after_the_concert() {
+    	Item[] items = new Item[] {new Item("Backstage passes to a TAFKAL80ETC concert", 0, 10) };
+    	GildedRose app = new GildedRose(items);
+        app.updateQuality();
+        assertEquals(0, app.items[0].quality);
+    }
+      
     
 }
 
