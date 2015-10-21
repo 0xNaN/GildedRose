@@ -61,6 +61,15 @@ public class GildedRoseTest {
         assertEquals(50, app.items[0].quality);
     }
     
+    @Test
+    public void
+    sulfuras_never_decreases_in_quality() {
+    	Item[] items = new Item[] {new Item("Sulfuras, Hand of Ragnaros", 1, 50) };
+    	GildedRose app = new GildedRose(items);
+        app.updateQuality();
+        assertEquals(50, app.items[0].quality);
+    }
+    
     
     
 }
