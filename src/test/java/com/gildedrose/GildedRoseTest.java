@@ -28,10 +28,12 @@ public class GildedRoseTest {
     @Test
     public void 
     once_the_sell_by_date_has_passed_the_quality_degrades_twice_as_fast() {
-    	Item[] items = new Item[] {new Item("fixme", 0, 10) };
+    	Item[] items = new Item[] {new Item("fixme", 0, 10), new Item("Conjured", 0, 10)};
     	GildedRose app = new GildedRose(items);
         app.updateQuality();
+        
         assertEquals(8, app.items[0].quality);
+        assertEquals(6, app.items[1].quality);
     }
     
     @Test
@@ -123,5 +125,6 @@ public class GildedRoseTest {
         app.updateQuality();
         assertEquals(1, app.items[0].sellIn);
     }
+ 
 }
 

@@ -11,7 +11,11 @@ class GildedRose {
     	
     	for(int i = 0; i < items.length; i++) {
     		if(items[i].name.equals("Conjured"))
-    			items[i].quality -= 1;
+    			if(items[i].sellIn == 0) {
+    				items[i].quality -= 2;
+    			} else {
+    				items[i].quality -= 1;
+    			}
     	}
     	
         for (int i = 0; i < items.length; i++) {
