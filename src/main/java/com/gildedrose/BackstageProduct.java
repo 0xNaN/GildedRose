@@ -1,7 +1,7 @@
 package com.gildedrose;
 
 public class BackstageProduct extends Product {
-
+	
 	public BackstageProduct(Item item) {
 		super(item);
 	}

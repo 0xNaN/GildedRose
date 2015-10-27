@@ -2,6 +2,8 @@ package com.gildedrose;
 
 public class Product {
 
+	private static final int SELLIN_DEC_FACTOR = 1;
+	private static final int QUALITY_DEC_FACTOR = 1;
 	protected Item item;
 
 	public Product(Item item) {
@@ -15,16 +17,16 @@ public class Product {
 
 	protected void updateQuality() {
 		if(item.sellIn < 0)
-			item.quality -= 2;
+			item.quality -= 2 * QUALITY_DEC_FACTOR;
 		else
-			item.quality -= 1;
+			item.quality -= QUALITY_DEC_FACTOR;
 		
 		if(item.quality <= 0)
 			item.quality = 0;
 	}
 
 	protected void reduceSellIn() {
-		item.sellIn -=  1;
+		item.sellIn -=  SELLIN_DEC_FACTOR;
 	}
 
 	public Item getItem() {
