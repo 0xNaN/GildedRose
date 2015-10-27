@@ -9,24 +9,18 @@ public class Product {
 	}
 
 	protected void update() {
-		updateQuality();
 		reduceSellIn();
-		if (item.sellIn < 0) {
-			updateSellIn();
-		}
+		updateQuality();
 	}
 
 	protected void updateQuality() {
-		if (item.quality > 0) {
-			item.quality -=  1;
-		}
-	}
-
-	protected void updateSellIn() {
-		if (item.quality > 0) {
+		if(item.sellIn < 0)
+			item.quality -= 2;
+		else
 			item.quality -= 1;
-		}
-
+		
+		if(item.quality <= 0)
+			item.quality = 0;
 	}
 
 	protected void reduceSellIn() {

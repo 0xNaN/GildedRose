@@ -12,12 +12,6 @@ public class AgedBrieProduct extends Product {
 		}
 	}
 	
-	protected void updateSellIn() {
-		if (item.quality < 50) {
-			item.quality += 1;
-		}
-	}
-	
 	protected void reduceSellIn() {
 		this.item.sellIn -= 1;
 	}

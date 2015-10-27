@@ -11,10 +11,6 @@ public class SulfurasProduct extends Product {
 		return;
 	}
 	
-	@Override
-	protected void updateSellIn() {
-		return;
-	}
 	
 	@Override
 	protected void reduceSellIn() {

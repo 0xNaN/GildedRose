@@ -7,26 +7,14 @@ public class BackstageProduct extends Product {
 	}
 
 	@Override
-	protected void updateQuality() {		
-		if (item.quality < 50) {
-			item.quality += 1;
-		
-			if (item.sellIn < 11) {
-			    if (item.quality < 50) {
-			        item.quality += 1;
-			    }
-			}
-
-			if (item.sellIn < 6) {
-			    if (item.quality < 50) {
-			        item.quality += 1;
-			    }
-			}
+	protected void updateQuality() {
+		if(item.sellIn <= 0) {
+			item.quality = 0;
+		} else if (item.sellIn <= 5) {
+			item.quality += 3;
+		} else if (item.sellIn <= 10) {
+			item.quality += 2;
 		}
 	}
-	
-	@Override
-	protected void updateSellIn() {
-		item.quality -= item.quality;
-	}
+
 }
